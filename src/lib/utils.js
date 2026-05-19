@@ -1,7 +1,11 @@
 export const formatDate = (dateString) => {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(dateString).toLocaleDateString('fr-FR', options);
-};
+  const date = new Date(dateString)
+  return date.toLocaleDateString('fr-FR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
 
 export const slugify = (text) => {
   return text
@@ -11,5 +15,5 @@ export const slugify = (text) => {
     .replace(/[^\w-]+/g, '')
     .replace(/--+/g, '-')
     .replace(/^-+/, '')
-    .replace(/-+$/, '');
-};
+    .replace(/-+$/, '')
+}
